@@ -3,16 +3,12 @@ package main
 import (
 	"flag"
 	"log"
-	"os"
-	"path/filepath"
-
-	. "github.com/kkdai/youtube"
+	. "../../youtubedr"
 )
 
 func main() {
 	flag.Parse()
-	log.Println(flag.Args())
-	currentDir, _ := filepath.Abs(filepath.Dir(os.Args[0]))
+	currentDir := flag.Arg(1)
 	log.Println("download to dir=", currentDir)
 	y := NewYoutube(true)
 	arg := flag.Arg(0)
